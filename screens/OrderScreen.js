@@ -121,7 +121,16 @@ class OrderScreen extends Component {
                 title={"Place Order"}
                 style={styles.orderButton}
                 onPress={() => {
-                  this.pushOrder();
+                  if (
+                    this.state.Buyer == "" ||
+                    this.state.Quantity == "" ||
+                    this.state.DesiredPrice == "" ||
+                    this.state.Mobile == ""
+                  ) {
+                    Alert.alert("Please Enter all the details");
+                  } else {
+                    this.pushOrder();
+                  }
                 }}
               />
             </View>
