@@ -138,6 +138,48 @@ class MarketScreen extends Component {
   }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  header: {
+    height: 60,
+    width: 350,
+    marginTop: 5,
+    justifyContent: "center",
+    paddingHorizontal: 5,
+  },
+  textinput: {
+    height: 40,
+    backgroundColor: "#E0E0E0",
+    borderRadius: 10,
+    elevation: 4,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  searchicon: {
+    fontSize: 24,
+    marginLeft: 30,
+  },
+  search: {
+    fontSize: 20,
+    marginLeft: 15,
+    width: "100%",
+  },
+  items: {
+    fontSize: 15,
+  },
+  itemImage: {
+    width: 100,
+    height: "100%",
+    marginRight: 10,
+  },
+  orderButton: {
+    backgroundColor: "#19a119",
+    height: 10,
+    width: 100,
+    marginTop: 15,
+    marginRight: 4,
+    alignSelf: "center",
+  },
+});
+
 
 export default withNavigation(MarketScreen);
