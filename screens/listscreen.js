@@ -96,7 +96,7 @@ const listScreen = (props) => {
       style={{ flex: 1 }}
       source={{
         uri:
-          "https://images.unsplash.com/photo-1519817914152-22d216bb9170?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1402&q=80",
+          "https://images.unsplash.com/photo-1563465408817-6c0bc875c22e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       }}
     >
       <View>
