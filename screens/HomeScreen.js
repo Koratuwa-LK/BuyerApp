@@ -67,7 +67,7 @@ class HomeScreen extends Component {
             <TouchableOpacity
               style={styles.card}
               onPress={() => {
-                this.props.navigation.navigate("OrderHistory");
+                this.props.navigation.navigate("Farmer");
               }}
             >
               <Text style={styles.text}>Farmers</Text>
