@@ -84,6 +84,15 @@ class HomeScreen extends Component {
               <Text style={styles.text}>Subscribe</Text>
               <Icon name="ios-list" style={styles.icon} />
             </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => {
+                this.props.navigation.navigate("Notifications");
+              }}
+            >
+              <Text style={styles.text}>Notifications</Text>
+              <Icon name="ios-list" style={styles.icon} />
+            </TouchableOpacity>
             
           </View>
           <FilledButton
