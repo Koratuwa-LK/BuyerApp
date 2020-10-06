@@ -16,6 +16,7 @@ import BookinghistoryScreen from "../screens/bookinghistoryscreen";
 import OrderHistoryScreen from "../screens/OrderHistoryScreen";
 import ReviewScreen from "../screens/ReviewScreen";
 import SubscribeHome from "../screens/SubscribeHome";
+import NotificationHome from "../screens/NotificationHome";
 
 const OrderNavigator = createStackNavigator({
   Loading: LoadingScreen,
@@ -33,6 +34,7 @@ const OrderNavigator = createStackNavigator({
   Mapview: mapScreen,
   Checkout: bookingscreen,
   SubscribeHome: SubscribeHome,
+  NotificationHome: NotificationHome
 });
 
 export default createAppContainer(OrderNavigator);
