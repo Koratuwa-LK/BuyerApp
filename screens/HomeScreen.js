@@ -74,6 +74,27 @@ class HomeScreen extends Component {
               <Icon name="ios-person" style={styles.icon} />
             </TouchableOpacity>
           </View>
+          <View style={{ flexDirection: "row", marginTop: 10 }}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => {
+                this.props.navigation.navigate("SubscribeHome");
+              }}
+            >
+              <Text style={styles.text}>Subscribe</Text>
+              <Icon name="ios-list" style={styles.icon} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => {
+                this.props.navigation.navigate("Notifications");
+              }}
+            >
+              <Text style={styles.text}>Notifications</Text>
+              <Icon name="ios-list" style={styles.icon} />
+            </TouchableOpacity>
+            
+          </View>
           <FilledButton
             title={"Sign Out"}
             style={styles.signOut}
@@ -92,7 +113,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 10,
-    paddingTop: 200,
+    paddingTop: 150,
     padding: 20,
     alignItems: "center",
   },
@@ -127,7 +148,7 @@ const styles = StyleSheet.create({
     color: "black",
   },
   signOut: {
-    marginTop: 130,
+    marginTop: 70,
     backgroundColor: "#19a119",
     height: 10,
     width: 120,
