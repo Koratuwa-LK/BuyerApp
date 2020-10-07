@@ -31,34 +31,49 @@ class HomeScreen extends Component {
         }}
       >
         <View style={styles.container}>
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => {
-              this.props.navigation.navigate("Market");
-            }}
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
-            <Text style={styles.text}>Market Place</Text>
-            <Icon name="ios-cart" style={styles.icon} />
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => {
+                this.props.navigation.navigate("Market");
+              }}
+            >
+              <Text style={styles.text}>Market Place</Text>
+              <Icon name="ios-cart" style={styles.icon} />
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => {
-              this.props.navigation.navigate("Booking");
-            }}
-          >
-            <Text style={styles.text}>Transport</Text>
-            <Icon name="ios-car" style={styles.icon} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => {
-              this.props.navigation.navigate("OrderHistory");
-            }}
-          >
-            <Text style={styles.text}>Your Orders</Text>
-            <Icon name="ios-list" style={styles.icon} />
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => {
+                this.props.navigation.navigate("Booking");
+              }}
+            >
+              <Text style={styles.text}>Transport</Text>
+              <Icon name="ios-car" style={styles.icon} />
+            </TouchableOpacity>
+          </View>
+          <View style={{ flexDirection: "row", marginTop: 10 }}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => {
+                this.props.navigation.navigate("OrderHistory");
+              }}
+            >
+              <Text style={styles.text}>Your Orders</Text>
+              <Icon name="ios-list" style={styles.icon} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => {
+                this.props.navigation.navigate("Farmer");
+              }}
+            >
+              <Text style={styles.text}>Farmers</Text>
+              <Icon name="ios-person" style={styles.icon} />
+            </TouchableOpacity>
+          </View>
           <FilledButton
             title={"Sign Out"}
             style={styles.signOut}
@@ -76,15 +91,17 @@ class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 150,
+    margin: 10,
+    paddingTop: 200,
     padding: 20,
     alignItems: "center",
   },
   card: {
     backgroundColor: "#fff",
-    marginBottom: 12,
-    height: "20%",
-    width: "60%",
+    margin: 5,
+    marginTop: 10,
+    height: "100%",
+    width: "50%",
     shadowColor: "#000",
     shadowOpacity: 1,
     shadowOffset: {
@@ -110,7 +127,7 @@ const styles = StyleSheet.create({
     color: "black",
   },
   signOut: {
-    marginTop: 80,
+    marginTop: 130,
     backgroundColor: "#19a119",
     height: 10,
     width: 120,

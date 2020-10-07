@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput,Image } from "react-native";
 import { Heading } from "../components/Heading";
 import { Input } from "../components/Input";
 import { FilledButton } from "../components/FilledButton";
@@ -16,8 +16,7 @@ class LoginScreen extends Component {
     this.state = {
       email: "",
       password: "",
-      errorMessage: null
-
+      errorMessage: null,
     };
   }
 
@@ -32,6 +31,7 @@ class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
         <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
         {this.state.errorMessage && (
           <Text style={{ color: "red", marginBottom: 15 }}>
@@ -79,12 +79,21 @@ const styles = StyleSheet.create({
     paddingTop: 120,
     padding: 20,
     alignItems: "center",
-    backgroundColor: "#d2f8d2",
+    backgroundColor: "#88b18b"
   },
+
+  image :{
+    alignItems: "center",
+    width: '50%',
+    height: '25%'
+  },
+
   title: {
-    color: "green",
+    color: "white",
     marginBottom: 80,
+    fontWeight:"500"
   },
+
   input: {
     backgroundColor: "#ccc",
     width: 300,
@@ -93,8 +102,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   loginButton: {
-    backgroundColor: "green",
     marginVertical: 32,
+    backgroundColor: "#6b8e23"
   },
 });
 

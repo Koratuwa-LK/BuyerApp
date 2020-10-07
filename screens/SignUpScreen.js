@@ -4,6 +4,7 @@ import {
   Text,
   View,
   TextInput,
+  Image,
   ScrollView,
   KeyboardAvoidingView,
 } from "react-native";
@@ -13,7 +14,7 @@ import { FilledButton } from "../components/FilledButton";
 import { TextButton } from "../components/TextButton";
 import { withNavigation } from "react-navigation";
 import firebase from "firebase";
-//import { YellowBox } from "react-native";
+import { YellowBox } from "react-native";
 //import { TextInput } from "react-native-gesture-handler";
 
 class SignUpScreen extends Component {
@@ -38,6 +39,7 @@ class SignUpScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
         <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
         {this.state.errorMessage && (
           <Text style={{ color: "red", marginBottom: 15 }}>
@@ -61,7 +63,7 @@ class SignUpScreen extends Component {
         />
         <FilledButton
           title={"SignUP"}
-          style={styles.loginButton}
+          style={styles.signupbutton}
           onPress={() => {
             this.handleSignUp();
           }}
@@ -80,15 +82,25 @@ class SignUpScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 120,
+    paddingTop: 50,
     padding: 20,
     alignItems: "center",
-    backgroundColor: "#d2f8d2",
+    backgroundColor: "#88b18b",
   },
+
+  image :{
+    alignItems: "center",
+    width: '58%',
+    height: '30%'
+  },
+
   title: {
-    color: "green",
+    marginTop: 50,
+    color: "white",
     marginBottom: 80,
+    fontWeight:"500"
   },
+
   input: {
     marginVertical: 8,
     backgroundColor: "#ccc",
@@ -96,8 +108,8 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
   },
-  loginButton: {
-    color: "green",
+  signupbutton: {
+    backgroundColor: "#6b8e23",
     marginVertical: 32,
   },
 });

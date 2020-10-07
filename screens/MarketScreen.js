@@ -41,35 +41,45 @@ class MarketScreen extends Component {
           marginBottom: 1,
         }}
       >
-        <Image source={{ uri: item.image }} />
+        <Image style={styles.itemImage} source={{ uri: item.image }} />
         <View style={{ flex: 1, justifyContent: "center" }}>
           <Text style={{ fontSize: 18, color: "green", marginBottom: 15 }}>
             {item.crop}
           </Text>
           <View style={{ flexDirection: "row" }}>
-            <Text>Price(1kg): </Text>
-            <Text>{item.price}</Text>
-            <Text>Rs</Text>
+            <Text style={styles.items}>Price(1kg): </Text>
+            <Text style={styles.items}>{item.price}</Text>
+            <Text style={styles.items}>Rs</Text>
           </View>
           <View style={{ flexDirection: "row" }}>
-            <Text>Quantity: </Text>
-            <Text>{item.quantity}</Text>
-            <Text>kg </Text>
+            <Text style={styles.items}>Quantity: </Text>
+            <Text style={styles.items}>{item.quantity}</Text>
+            <Text style={styles.items}>kg </Text>
           </View>
           <View>
-            <Text>{item.name}</Text>
+            <Text style={styles.items}>{item.name}</Text>
           </View>
           <View>
-            <Text>{item.economicCenter}</Text>
+            <Text style={styles.items}>{item.economicCenter}</Text>
           </View>
         </View>
-        <FilledButton
-          title={"Order"}
-          style={styles.orderButton}
-          onPress={() => {
-            this.props.navigation.navigate("Order", item);
-          }}
-        />
+        <View style={{ flexDirection: "column", justifyContent: "center" }}>
+          <FilledButton
+            title={"Order"}
+            style={styles.orderButton}
+            onPress={() => {
+              this.props.navigation.navigate("Order", item);
+            }}
+          />
+          <View style={{ height: 5 }}></View>
+          <FilledButton
+            title={"Reviews"}
+            style={styles.orderButton}
+            onPress={() => {
+              this.props.navigation.navigate("Reviews", item);
+            }}
+          />
+        </View>
       </View>
     );
   };
@@ -113,7 +123,7 @@ class MarketScreen extends Component {
       </View>
     ) : (
       <View style={{ flex: 1 }}>
-        <View>
+        <View style={styles.header}>
           <Animatable.View
             animation="slideInRight"
             duration={500}
@@ -122,6 +132,7 @@ class MarketScreen extends Component {
             <Icon name="ios-search" style={styles.searchicon} />
             <TextInput
               placeholder="Search crops"
+              style={styles.search}
               onChangeText={(text) => {
                 this.searchCrops(text);
               }}
@@ -174,12 +185,10 @@ const styles = StyleSheet.create({
   orderButton: {
     backgroundColor: "#19a119",
     height: 10,
-    width: 100,
-    marginTop: 15,
+    width: 107,
     marginRight: 4,
     alignSelf: "center",
   },
 });
-
 
 export default withNavigation(MarketScreen);

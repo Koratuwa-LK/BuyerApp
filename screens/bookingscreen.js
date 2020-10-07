@@ -52,7 +52,7 @@ class bookingscreen extends Component {
         lng: this.props.navigation.getParam("lng"),
       })
       .then((response) => {
-        Alert.alert("Booking Submited Successfully");
+        Alert.alert("Booking Submited");
       })
       .catch((err) => {
         console.log(err);
@@ -77,9 +77,8 @@ class bookingscreen extends Component {
         style={{ flex: 1 }}
         source={{
           uri:
-            "https://images.unsplash.com/photo-1551655510-555dc3be8633?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+            "https://images.unsplash.com/photo-1579992822406-2092a7bd5a36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80://images.unsplash.com/photo-1577549175702-422bcf9b2718?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80://images.unsplash.com/photo-1519817914152-22d216bb9170?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1402&q=80",
         }}
-        
       >
         <View style={styles.tile}>
           <View
