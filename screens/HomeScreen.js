@@ -3,17 +3,13 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
-  Alert,
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import { Heading } from "../components/Heading";
 import { FilledButton } from "../components/FilledButton";
 import { withNavigation } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
 import firebase from "firebase";
-import { YellowBox } from "react-native";
 
 class HomeScreen extends Component {
   constructor(props) {

@@ -3,6 +3,8 @@ import { View, Text, ActivityIndicator, StyleSheet } from "react-native";
 import firebase from "firebase";
 import { withNavigation } from "react-navigation";
 
+console.disableYellowBox = true;
+
 class Loading extends React.Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {
