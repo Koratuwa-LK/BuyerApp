@@ -92,9 +92,10 @@ class FarmerScreen extends Component {
                   <Text style={styles.title}>{item.Farmer}</Text>
                   <Text style={styles.rating}>{item.Rating}/5</Text>
                 </View>
-                <Text style={styles.title}>phone</Text>
-                <Text style={styles.title}>eco</Text>
-                <Text style={styles.title}>crops</Text>
+                <View style={{ marginTop: 20 }}></View>
+                <Text style={styles.text}>phone</Text>
+                <Text style={styles.text}>eco</Text>
+                <Text style={styles.text}>crops</Text>
               </View>
             </View>
           </View>
@@ -112,50 +113,60 @@ class FarmerScreen extends Component {
             onBackdropPress={() => this.setState({ isModalVisible: false })}
             style={{ margin: 0 }}
           >
-            <View style={styles.container}>
-              <View style={styles.box}>
-                <Stars
-                  half={false}
-                  default={1}
-                  update={(val) => {
-                    this.setState({ stars: val });
-                    this.state.newRating = val;
-                  }}
-                  spacing={4}
-                  starSize={50}
-                  count={5}
-                  fullStar={<Icon name={"star"} style={[styles.myStarStyle]} />}
-                  emptyStar={
-                    <Icon
-                      name={"star-outline"}
-                      style={[styles.myStarStyle, styles.myEmptyStarStyle]}
-                    />
-                  }
-                />
-                <Text style={styles.desc}>{this.description()}</Text>
-                <TextInput
-                  style={styles.userReview}
-                  placeholder={"Your Name"}
-                  placeholderTextColor="#606060"
-                  underlineColorAndroid="black"
-                  value={this.state.name}
-                  onChangeText={(text) => this.setState({ name: text })}
-                ></TextInput>
-                <TextInput
-                  style={styles.userReview}
-                  placeholder={"Your Review"}
-                  placeholderTextColor="#606060"
-                  underlineColorAndroid="black"
-                  value={this.state.Review}
-                  onChangeText={(text) => this.setState({ Review: text })}
-                ></TextInput>
-                <FilledButton
-                  title={"Submit"}
-                  style={styles.orderButton}
-                  onPress={() => this.submit(this.state.FarmerID)}
-                />
+            <ScrollView>
+              <View style={styles.container}>
+                <View style={styles.box}>
+                  <Stars
+                    half={false}
+                    default={1}
+                    update={(val) => {
+                      this.setState({ stars: val });
+                      this.state.newRating = val;
+                    }}
+                    spacing={4}
+                    starSize={50}
+                    count={5}
+                    fullStar={
+                      <Icon name={"star"} style={[styles.myStarStyle]} />
+                    }
+                    emptyStar={
+                      <Icon
+                        name={"star-outline"}
+                        style={[styles.myStarStyle, styles.myEmptyStarStyle]}
+                      />
+                    }
+                  />
+                  <Text style={styles.desc}>{this.description()}</Text>
+                  <TextInput
+                    style={styles.userReview}
+                    placeholder={"Your Name"}
+                    placeholderTextColor="#606060"
+                    underlineColorAndroid="black"
+                    value={this.state.name}
+                    onChangeText={(text) => this.setState({ name: text })}
+                  ></TextInput>
+                  <TextInput
+                    style={styles.userReview}
+                    placeholder={"Your Review"}
+                    placeholderTextColor="#606060"
+                    underlineColorAndroid="black"
+                    value={this.state.Review}
+                    onChangeText={(text) => this.setState({ Review: text })}
+                  ></TextInput>
+                  <FilledButton
+                    title={"Submit"}
+                    style={styles.orderButton}
+                    onPress={() => {
+                      if (this.state.name == "" || this.state.Review == "") {
+                        Alert.alert("Please Enter all the details");
+                      } else {
+                        this.submit(this.state.FarmerID);
+                      }
+                    }}
+                  />
+                </View>
               </View>
-            </View>
+            </ScrollView>
           </Modal>
         </View>
       </ScrollView>

@@ -12,6 +12,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import firebase from "firebase";
 
 class HomeScreen extends Component {
+  static navigationOptions = { headerLeft: null };
   constructor(props) {
     super(props);
     console.disableYellowBox = true;

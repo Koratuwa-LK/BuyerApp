@@ -98,6 +98,10 @@ class OrderHistoryScreen extends Component {
     const userId = firebase.auth().currentUser.uid;
     const orders = db.ref("orders").orderByChild("BuyerId").equalTo(userId);
     orders.on("value", (datasnap) => {
+      if (!datasnap.exists()) {
+        Alert.alert("You have not ordered anything");
+        this.props.navigation.navigate("Home");
+      }
       const dataSource = [];
       datasnap.forEach((doc) => {
         dataSource.push({
