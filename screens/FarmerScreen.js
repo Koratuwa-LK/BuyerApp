@@ -93,9 +93,16 @@ class FarmerScreen extends Component {
                   <Text style={styles.rating}>{item.Rating}/5</Text>
                 </View>
                 <View style={{ marginTop: 20 }}></View>
-                <Text style={styles.text}>phone</Text>
-                <Text style={styles.text}>eco</Text>
-                <Text style={styles.text}>crops</Text>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.text} selectable>
+                    Mobile:{" "}
+                  </Text>
+                  <Text style={styles.text}>{item.Mobile}</Text>
+                </View>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.text}>Economic Center: </Text>
+                  <Text style={styles.text}>{item.Eco}</Text>
+                </View>
               </View>
             </View>
           </View>
@@ -197,6 +204,8 @@ class FarmerScreen extends Component {
         dataSource.push({
           key: doc.key,
           Farmer: doc.toJSON().name,
+          Mobile: doc.toJSON().mobile,
+          Eco: doc.toJSON().economiccenter,
           uid: doc.toJSON().uid,
           Rating: this.roundedAvg,
         });
