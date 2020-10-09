@@ -83,100 +83,96 @@ class FarmerScreen extends Component {
 
   renderItem = ({ item }) => {
     return (
-      <ScrollView>
-        <View style={styles.card}>
-          <View style={{ marginLeft: 10 }}>
-            <View style={{ flexDirection: "row" }}>
-              <View style={{ flexDirection: "column" }}>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={styles.title}>{item.Farmer}</Text>
-                  <Text style={styles.rating}>{item.Rating}/5</Text>
-                </View>
-                <View style={{ marginTop: 20 }}></View>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={styles.text} selectable>
-                    Mobile:{" "}
-                  </Text>
-                  <Text style={styles.text}>{item.Mobile}</Text>
-                </View>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={styles.text}>Economic Center: </Text>
-                  <Text style={styles.text}>{item.Eco}</Text>
-                </View>
+      <View style={styles.card}>
+        <View style={{ marginLeft: 10 }}>
+          <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "column" }}>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.title}>{item.Farmer}</Text>
+                <Text style={styles.rating}>{item.Rating}/5</Text>
+              </View>
+              <View style={{ marginTop: 20 }}></View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.text} selectable>
+                  Mobile:{" "}
+                </Text>
+                <Text style={styles.text}>{item.Mobile}</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.text}>Economic Center: </Text>
+                <Text style={styles.text}>{item.Eco}</Text>
               </View>
             </View>
           </View>
-          <FilledButton
-            title={"Rate Farmer"}
-            style={styles.orderButton}
-            onPress={() => this.openModal(item.uid)}
-          />
-          <Modal
-            animationIn="bounceIn"
-            animationOut="bounceOut"
-            backdropColor="#696969"
-            isVisible={this.state.isModalVisible}
-            onBackButtonPress={() => this.setState({ isModalVisible: false })}
-            onBackdropPress={() => this.setState({ isModalVisible: false })}
-            style={{ margin: 0 }}
-          >
-            <ScrollView>
-              <View style={styles.container}>
-                <View style={styles.box}>
-                  <Stars
-                    half={false}
-                    default={1}
-                    update={(val) => {
-                      this.setState({ stars: val });
-                      this.state.newRating = val;
-                    }}
-                    spacing={4}
-                    starSize={50}
-                    count={5}
-                    fullStar={
-                      <Icon name={"star"} style={[styles.myStarStyle]} />
-                    }
-                    emptyStar={
-                      <Icon
-                        name={"star-outline"}
-                        style={[styles.myStarStyle, styles.myEmptyStarStyle]}
-                      />
-                    }
-                  />
-                  <Text style={styles.desc}>{this.description()}</Text>
-                  <TextInput
-                    style={styles.userReview}
-                    placeholder={"Your Name"}
-                    placeholderTextColor="#606060"
-                    underlineColorAndroid="black"
-                    value={this.state.name}
-                    onChangeText={(text) => this.setState({ name: text })}
-                  ></TextInput>
-                  <TextInput
-                    style={styles.userReview}
-                    placeholder={"Your Review"}
-                    placeholderTextColor="#606060"
-                    underlineColorAndroid="black"
-                    value={this.state.Review}
-                    onChangeText={(text) => this.setState({ Review: text })}
-                  ></TextInput>
-                  <FilledButton
-                    title={"Submit"}
-                    style={styles.orderButton}
-                    onPress={() => {
-                      if (this.state.name == "" || this.state.Review == "") {
-                        Alert.alert("Please Enter all the details");
-                      } else {
-                        this.submit(this.state.FarmerID);
-                      }
-                    }}
-                  />
-                </View>
-              </View>
-            </ScrollView>
-          </Modal>
         </View>
-      </ScrollView>
+        <FilledButton
+          title={"Rate Farmer"}
+          style={styles.orderButton}
+          onPress={() => this.openModal(item.uid)}
+        />
+        <Modal
+          animationIn="bounceIn"
+          animationOut="bounceOut"
+          backdropColor="#696969"
+          isVisible={this.state.isModalVisible}
+          onBackButtonPress={() => this.setState({ isModalVisible: false })}
+          onBackdropPress={() => this.setState({ isModalVisible: false })}
+          style={{ margin: 0 }}
+        >
+          <ScrollView>
+            <View style={styles.container}>
+              <View style={styles.box}>
+                <Stars
+                  half={false}
+                  default={1}
+                  update={(val) => {
+                    this.setState({ stars: val });
+                    this.state.newRating = val;
+                  }}
+                  spacing={4}
+                  starSize={50}
+                  count={5}
+                  fullStar={<Icon name={"star"} style={[styles.myStarStyle]} />}
+                  emptyStar={
+                    <Icon
+                      name={"star-outline"}
+                      style={[styles.myStarStyle, styles.myEmptyStarStyle]}
+                    />
+                  }
+                />
+                <Text style={styles.desc}>{this.description()}</Text>
+                <TextInput
+                  style={styles.userReview}
+                  placeholder={"Your Name"}
+                  placeholderTextColor="#606060"
+                  underlineColorAndroid="black"
+                  value={this.state.name}
+                  onChangeText={(text) => this.setState({ name: text })}
+                ></TextInput>
+                <TextInput
+                  style={styles.userReview}
+                  placeholder={"Your Review"}
+                  placeholderTextColor="#606060"
+                  underlineColorAndroid="black"
+                  value={this.state.Review}
+                  onChangeText={(text) => this.setState({ Review: text })}
+                ></TextInput>
+                <FilledButton
+                  title={"Submit"}
+                  style={styles.orderButton}
+                  onPress={() => {
+                    if (this.state.name == "" || this.state.Review == "") {
+                      Alert.alert("Please Enter all the details");
+                    } else {
+                      this.submit(this.state.FarmerID);
+                    }
+                  }}
+                />
+              </View>
+            </View>
+          </ScrollView>
+        </Modal>
+      </View>
     );
   };
 

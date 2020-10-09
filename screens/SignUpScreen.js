@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  ScrollView,
-  KeyboardAvoidingView,
-} from "react-native";
+import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 import { Heading } from "../components/Heading";
 import { Input } from "../components/Input";
 import { FilledButton } from "../components/FilledButton";
@@ -39,6 +32,10 @@ class SignUpScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image
+          style={styles.Logo}
+          source={require("../assets/farmer2.png")}
+        ></Image>
         <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
         {this.state.errorMessage && (
           <Text style={{ color: "red", marginBottom: 15 }}>
@@ -89,6 +86,7 @@ const styles = StyleSheet.create({
   title: {
     color: "green",
     marginBottom: 80,
+    marginTop: -40,
   },
   input: {
     marginVertical: 8,
@@ -96,6 +94,11 @@ const styles = StyleSheet.create({
     width: 300,
     padding: 10,
     borderRadius: 8,
+  },
+  Logo: {
+    marginTop: -80,
+    height: 250,
+    width: 250,
   },
   loginButton: {
     color: "green",

@@ -5,6 +5,7 @@ import {
   View,
   TouchableOpacity,
   ImageBackground,
+  Image,
 } from "react-native";
 import { FilledButton } from "../components/FilledButton";
 import { withNavigation } from "react-navigation";
@@ -28,6 +29,10 @@ class HomeScreen extends Component {
         }}
       >
         <View style={styles.container}>
+          <Image
+            style={styles.Logo}
+            source={require("../assets/farmer2.png")}
+          ></Image>
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
@@ -107,15 +112,17 @@ const styles = StyleSheet.create({
     },
     elevation: 10,
   },
+  Logo: {
+    marginTop: -150,
+    marginBottom: 0,
+    height: 200,
+    width: 200,
+  },
   text: {
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 18,
     color: "green",
-  },
-  title: {
-    color: "green",
-    marginBottom: 48,
   },
   icon: {
     marginTop: 10,
@@ -124,7 +131,7 @@ const styles = StyleSheet.create({
     color: "black",
   },
   signOut: {
-    marginTop: 130,
+    marginTop: 100,
     backgroundColor: "#19a119",
     height: 10,
     width: 120,
