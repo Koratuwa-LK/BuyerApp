@@ -15,7 +15,10 @@ import LoadingScreen from "../screens/LoadingScreen";
 import BookinghistoryScreen from "../screens/bookinghistoryscreen";
 import OrderHistoryScreen from "../screens/OrderHistoryScreen";
 import ReviewScreen from "../screens/ReviewScreen";
+import SubscribeHome from "../screens/SubscribeHome";
+import NotificationScreen from "../screens/NotificationScreen";
 import FarmerScreen from "../screens/FarmerScreen";
+
 
 const OrderNavigator = createStackNavigator({
   Loading: LoadingScreen,
@@ -33,6 +36,8 @@ const OrderNavigator = createStackNavigator({
   List: listScreen,
   Mapview: mapScreen,
   Checkout: bookingscreen,
+  SubscribeHome: SubscribeHome,
+  NotificationScreen: NotificationScreen
 });
 
 export default createAppContainer(OrderNavigator);
