@@ -1,6 +1,7 @@
+// 
 export default {
-    Login: 'Login',
-    Signup:'Signup',
-    Email: 'Email',
-    Password:'Password',
-  };
+  Login: 'Login',
+  Signup:'Signup',
+  Email: 'Email',
+  Password:'Password',
+};
