@@ -95,6 +95,11 @@ const listScreen = (props) => {
 
   return (
     
+      // <View style={styles.main}>
+      //   <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
+      //   {/* <Button onPress={locationHandler}>set my location</Button> */}
+      //   <View>
+      //   <View style={styles.row1}>
       <View style={styles.main}>
         <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
         {/* <Button onPress={locationHandler}>set my location</Button> */}
@@ -178,69 +183,133 @@ const listScreen = (props) => {
 
 const styles = StyleSheet.create({
 
-  main:{
-      flex:1,
-      backgroundColor:"#88b18b"
-  },
+  // main:{
+  //     flex:1,
+  //     backgroundColor:"#88b18b"
+  // },
 
-  title:{
-    color: "white",
-    fontWeight:"500",
-    fontSize:40,
-    marginTop:10,
-    marginLeft: 30
-  },
+  // title:{
+  //   color: "white",
+  //   fontWeight:"500",
+  //   fontSize:40,
+  //   marginTop:10,
+  //   marginLeft: 30
+  // },
 
-  row1:{
-    flexDirection: "row",
-    marginTop: 30,
-    marginLeft: 30
-  },
+  // row1:{
+  //   flexDirection: "row",
+  //   marginTop: 30,
+  //   marginLeft: 30
+  // },
 
-  topic:{
-    marginTop: 30,
-    fontSize:30,
-    color:"#ffffff"
-  },
+  // topic:{
+  //   marginTop: 30,
+  //   fontSize:30,
+  //   color:"#ffffff"
+  // },
 
-  container1:{
-    height: 180,
-    width: 150,
-    textAlign: "center",
-    backgroundColor: "rgba(255,255,255, 0.5)",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 6,
+  // container1:{
+  //   height: 180,
+  //   width: 150,
+  //   textAlign: "center",
+  //   backgroundColor: "rgba(255,255,255, 0.5)",
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  //   borderRadius: 6,
     
 
-  },
+  // },
 
-  container2:{
-    height: 180,
-    width: 150,
-    marginLeft: 50,
-    textAlign: "center",
-    backgroundColor: "rgba(255,255,255, 0.5)",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 6,
+  // container2:{
+  //   height: 180,
+  //   width: 150,
+  //   marginLeft: 50,
+  //   textAlign: "center",
+  //   backgroundColor: "rgba(255,255,255, 0.5)",
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  //   borderRadius: 6,
 
-  },
+  // },
 
-  pickcon:{
-    alignItems: "center"
-  },
+  // pickcon:{
+  //   alignItems: "center"
+  // },
 
  
-  imgstyle:{
-    height: 100,
-    width : 100
+  // imgstyle:{
+  //   height: 100,
+  //   width : 100
 
-  },
+  // },
 
-  txtstyle:{
-    textAlign: "center" 
-  },
+  // txtstyle:{
+  //   textAlign: "center" 
+  // },
+
+  main:{
+    flex:1,
+    backgroundColor:"#88b18b"
+},
+
+title:{
+  color: "white",
+  fontWeight:"500",
+  fontSize:40,
+  marginTop:10,
+  marginLeft: 30
+},
+
+row1:{
+  flexDirection: "row",
+  marginTop: 30,
+  marginLeft: 30
+},
+
+topic:{
+  marginTop: 30,
+  fontSize:30,
+  color:"#ffffff"
+},
+
+container1:{
+  height: 180,
+  width: 150,
+  textAlign: "center",
+  backgroundColor: "rgba(255,255,255, 0.5)",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: 6,
+  
+
+},
+
+container2:{
+  height: 180,
+  width: 150,
+  marginLeft: 50,
+  textAlign: "center",
+  backgroundColor: "rgba(255,255,255, 0.5)",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: 6,
+
+},
+
+pickcon:{
+  alignItems: "center"
+},
+
+
+imgstyle:{
+  height: 100,
+  width : 100
+
+},
+
+txtstyle:{
+  textAlign: "center" 
+},
 
   tile: {
     backgroundColor: "rgba(255,255,255,10)",
