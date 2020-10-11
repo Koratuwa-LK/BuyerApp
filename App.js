@@ -8,7 +8,7 @@ import UserNavigator from "./navigation/UserNavigator";
 
 
 export default function App() {
-  return <UOrderNavigator />;
+  return <OrderNavigator />;
 }
 
 const styles = StyleSheet.create({
