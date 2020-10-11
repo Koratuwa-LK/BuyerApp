@@ -26,9 +26,14 @@ import { Heading } from "../components/Heading";
     render (){        
     return (
        
+        // <View style={styles.main}>
+        //      <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
+        //      <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
+
         <View style={styles.main}>
-             <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
-             <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
+        <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
+        <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
+
 
         <View style={styles.row1}>
             <View style={styles.btn}>
@@ -38,6 +43,7 @@ import { Heading } from "../components/Heading";
                 <Image style={styles.imgstyle} source={require('../assets/eastwood-delivery.png')}></Image>
                 <Text style={styles.txtstyle}>BOOK DELIVERY</Text>
                 </View>
+
        
             </TouchableOpacity>
             </View>
@@ -59,6 +65,50 @@ import { Heading } from "../components/Heading";
     }
 
 const styles = StyleSheet.create({
+
+    // main:{
+    //     flex: 1,
+    //     backgroundColor: "#88b18b",
+    //     alignItems: 'center'
+    // },
+
+    // title: {
+    //     color: "white",
+    //     marginBottom: 40,
+    //     fontWeight:"500",
+    //     fontSize:40,
+    //     marginTop:10
+    //   },
+
+    // row1 :{
+    //     flexDirection: "row"
+    // },
+
+    // image : {
+
+    //         marginTop: 100,
+    //         height: "40%",
+    //         width: "85%"
+    // },
+    
+    // style1: {
+    //     height: 175,
+    //     width: 175,
+    //     textAlign:'center',
+    //     backgroundColor: 'rgba(255,255,255, 0.5)',
+    //     borderRadius: 6
+    //   },
+
+    // imgstyle:{
+    //     height:150,
+    //     width: 175
+    // },
+
+    // txtstyle:{
+    //     textAlign: 'center',
+    //     fontSize: 16
+
+    // },
 
     main:{
         flex: 1,
