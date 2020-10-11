@@ -48,28 +48,28 @@ class SignUpScreen extends Component {
         )}
         <TextInput
           style={styles.input}
-          placeholder={"Email"}
+          placeholder={'Email'}
           placeholderTextColor="#606060"
           value={this.state.email}
           onChangeText={(text) => this.setState({ email: text })}
         />
         <TextInput
           style={styles.input}
-          placeholder={"Password"}
+          placeholder={'Password'}
           placeholderTextColor="#606060"
           secureTextEntry
           value={this.state.password}
           onChangeText={(text) => this.setState({ password: text })}
         />
         <FilledButton
-          title={"SignUP"}
+          title={'Signup'}
           style={styles.signupbutton}
           onPress={() => {
             this.handleSignUp();
           }}
         />
         <TextButton
-          title={"Already Have an Account? Login"}
+          title={'Already Have an Account? Login'}
           onPress={() => {
             this.props.navigation.navigate("Login");
           }}

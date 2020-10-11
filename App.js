@@ -6,8 +6,9 @@ import OrderScreen from "./screens/OrderScreen";
 import OrderNavigator from "./navigation/OrderNavigator";
 import UserNavigator from "./navigation/UserNavigator";
 
+
 export default function App() {
-  return <OrderNavigator />;
+  return <UOrderNavigator />;
 }
 
 const styles = StyleSheet.create({

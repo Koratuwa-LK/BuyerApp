@@ -1,27 +1,44 @@
-import React, { Component } from "react";
+import React, { Component,useLayoutEffect } from "react";
 import { render } from "react-dom";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image,Button,Alert } from "react-native";
 import { FilledButton } from "../components/FilledButton";
 import { Heading } from "../components/Heading";
 
 
+
+
+
+
 import { withNavigation } from "react-navigation";
 
+ 
 
 class FirstScreen extends Component {
+
+  button = () => {
+    return (
+      <TouchableOpacity>
+        style={styles.button}
+       
+            <Text>Click Change Language</Text>
+          </TouchableOpacity>
+        );
+      };
+
 render()
 {
+  
     return(
 
         <View style={styles.container}>
             <Image style={styles.image} source={require('../assets/logo.jpg')}></Image>
-
+        
             <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
             <Text style={styles.texty}>Please click Login if you are already registered Or Click Sign up to create a new account.</Text>
            
           <View style={styles.buttonRow}>   
             <FilledButton
-          title={"Login"}
+          title={'Login'}
           style={styles.loginButton}
           onPress={() => {
             this.props.navigation.navigate("Login");
@@ -29,13 +46,15 @@ render()
           />
 
             <FilledButton
-          title={"SignUp"}
+          title={'Signup'}
           style={styles.signupButton}
           onPress={() => {
             this.props.navigation.navigate("SignUp");
           }}
           />
+
         </View>
+
         </View>
     )
 }
@@ -46,6 +65,11 @@ const styles = StyleSheet.create({
     container: {
        flex:1,
        backgroundColor: '#88b18b'
+    },
+
+    button:{
+      marginTop:10,
+    
     },
 
     title:{

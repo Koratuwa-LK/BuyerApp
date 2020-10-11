@@ -8,6 +8,8 @@ import { withNavigation } from "react-navigation";
 import firebase from "firebase";
 import { YellowBox } from "react-native";
 
+
+
 class LoginScreen extends Component {
   static navigationOptions = { header: null };
   constructor(props) {
@@ -40,7 +42,7 @@ class LoginScreen extends Component {
         )}
         <TextInput
           style={styles.input}
-          placeholder={"Email"}
+          placeholder={'Email'}
           placeholderTextColor="#606060"
           autoCompleteType="off"
           value={this.state.email}
@@ -48,7 +50,7 @@ class LoginScreen extends Component {
         />
         <TextInput
           style={styles.input}
-          placeholder={"Password"}
+          placeholder={'Password'}
           placeholderTextColor="#606060"
           secureTextEntry
           autoCompleteType="off"
@@ -56,14 +58,14 @@ class LoginScreen extends Component {
           onChangeText={(text) => this.setState({ password: text })}
         />
         <FilledButton
-          title={"Login"}
+          title={'Login'}
           style={styles.loginButton}
           onPress={() => {
             this.handleLogin();
           }}
         />
         <TextButton
-          title={"Don't Have a account? Create one"}
+          title={"Don't have an account? Create"}
           onPress={() => {
             this.props.navigation.navigate("SignUp");
           }}
