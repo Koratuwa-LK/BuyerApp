@@ -17,6 +17,8 @@ import firebase from "firebase";
 import { YellowBox } from "react-native";
 //import { TextInput } from "react-native-gesture-handler";
 
+// 
+
 class SignUpScreen extends Component {
   constructor(props) {
     super(props);
@@ -78,6 +80,22 @@ class SignUpScreen extends Component {
     );
   }
 }
+
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     paddingTop: 50,
+//     padding: 20,
+//     alignItems: "center",
+//     backgroundColor: "#88b18b",
+//   },
+
+//   image :{
+//     alignItems: "center",
+//     width: '58%',
+//     height: '30%'
+//   },
 
 const styles = StyleSheet.create({
   container: {
