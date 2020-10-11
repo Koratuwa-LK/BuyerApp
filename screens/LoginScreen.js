@@ -1,3 +1,37 @@
+// import React, { Component } from "react";
+// import { StyleSheet, Text, View, TextInput,Image } from "react-native";
+// import { Heading } from "../components/Heading";
+// import { Input } from "../components/Input";
+// import { FilledButton } from "../components/FilledButton";
+// import { TextButton } from "../components/TextButton";
+// import { withNavigation } from "react-navigation";
+// import firebase from "firebase";
+// import { YellowBox } from "react-native";
+
+
+
+// class LoginScreen extends Component {
+//   static navigationOptions = { header: null };
+//   constructor(props) {
+//     super(props);
+//     console.disableYellowBox = true;
+//     this.state = {
+//       email: "",
+//       password: "",
+//       errorMessage: null,
+//     };
+//   }
+
+//   handleLogin() {
+//     firebase
+//       .auth()
+//       .signInWithEmailAndPassword(this.state.email, this.state.password)
+//       .then(() => this.props.navigation.navigate("Home"))
+//       .catch((error) => this.setState({ errorMessage: error.message }));
+//   }
+
+
+
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TextInput,Image } from "react-native";
 import { Heading } from "../components/Heading";
@@ -110,3 +144,4 @@ const styles = StyleSheet.create({
 });
 
 export default withNavigation(LoginScreen);
+

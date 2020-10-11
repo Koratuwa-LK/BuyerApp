@@ -19,10 +19,12 @@ import SubscribeHome from "../screens/SubscribeHome";
 import NotificationScreen from "../screens/NotificationScreen";
 import NotificationHistory from "../screens/notificationHistory";
 import FarmerScreen from "../screens/FarmerScreen";
+import FirstScreen from "../screens/firstscreen";
 
 
 const OrderNavigator = createStackNavigator({
   Loading: LoadingScreen,
+  First: FirstScreen,
   Login: LoginScreen,
   SignUp: SignUpScreen,
   Home: HomeScreen,
