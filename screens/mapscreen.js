@@ -65,7 +65,7 @@ const mapScreen = (props) => {
             </MapView>
             
             <View>
-                <Button mode="contained" onPress={() => {props.navigation.navigate('Checkout', {lat: lat, lng: lng, name: props.navigation.getParam('name')})}}  color="#fa7916">book now</Button>
+                <Button mode="contained" onPress={() => {props.navigation.navigate('Checkout', {lat: lat, lng: lng, name: props.navigation.getParam('name')})}}  color="#6b8e23">book now</Button>
             </View>
 
             </View>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput,Image } from "react-native";
 import { Heading } from "../components/Heading";
 import { Input } from "../components/Input";
 import { FilledButton } from "../components/FilledButton";
@@ -7,6 +7,8 @@ import { TextButton } from "../components/TextButton";
 import { withNavigation } from "react-navigation";
 import firebase from "firebase";
 import { YellowBox } from "react-native";
+
+
 
 class LoginScreen extends Component {
   static navigationOptions = { header: null };
@@ -31,6 +33,7 @@ class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
         <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
         {this.state.errorMessage && (
           <Text style={{ color: "red", marginBottom: 15 }}>
@@ -39,7 +42,7 @@ class LoginScreen extends Component {
         )}
         <TextInput
           style={styles.input}
-          placeholder={"Email"}
+          placeholder={'Email'}
           placeholderTextColor="#606060"
           autoCompleteType="off"
           value={this.state.email}
@@ -47,7 +50,7 @@ class LoginScreen extends Component {
         />
         <TextInput
           style={styles.input}
-          placeholder={"Password"}
+          placeholder={'Password'}
           placeholderTextColor="#606060"
           secureTextEntry
           autoCompleteType="off"
@@ -55,14 +58,14 @@ class LoginScreen extends Component {
           onChangeText={(text) => this.setState({ password: text })}
         />
         <FilledButton
-          title={"Login"}
+          title={'Login'}
           style={styles.loginButton}
           onPress={() => {
             this.handleLogin();
           }}
         />
         <TextButton
-          title={"Don't Have a account? Create one"}
+          title={"Don't have an account? Create"}
           onPress={() => {
             this.props.navigation.navigate("SignUp");
           }}
@@ -78,12 +81,21 @@ const styles = StyleSheet.create({
     paddingTop: 120,
     padding: 20,
     alignItems: "center",
-    backgroundColor: "#d2f8d2",
+    backgroundColor: "#88b18b"
   },
+
+  image :{
+    alignItems: "center",
+    width: '50%',
+    height: '25%'
+  },
+
   title: {
-    color: "green",
+    color: "white",
     marginBottom: 80,
+    fontWeight:"500"
   },
+
   input: {
     backgroundColor: "#ccc",
     width: 300,
@@ -92,8 +104,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   loginButton: {
-    backgroundColor: "green",
     marginVertical: 32,
+    backgroundColor: "#6b8e23"
   },
 });
 

@@ -5,13 +5,14 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  ImageBackground,
   Image,
   Alert,
 } from "react-native";
 import { Button } from "react-native-paper";
 import TimePicker from "react-native-24h-timepicker";
 import axios from "../axioslist";
+import { Heading } from "../components/Heading";
+import { FilledButton } from "../components/FilledButton";
 
 class bookingscreen extends Component {
   state = {
@@ -72,14 +73,9 @@ class bookingscreen extends Component {
 
   render() {
     return (
-      // <View style={styles.container}>
-      <ImageBackground
-        style={{ flex: 1 }}
-        source={{
-          uri:
-            "https://images.unsplash.com/photo-1579992822406-2092a7bd5a36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80://images.unsplash.com/photo-1577549175702-422bcf9b2718?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80://images.unsplash.com/photo-1519817914152-22d216bb9170?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1402&q=80",
-        }}
-      >
+      <View style={styles.container}>
+        <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
+             <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
         <View style={styles.tile}>
           <View
             style={{
@@ -110,8 +106,8 @@ class bookingscreen extends Component {
             </View>
           </View>
 
-          <View style={{ backgroundColor: "white" }}>
-            <Button color="#fa7916" onPress={() => this.TimePicker.open()}>
+          <View style={{ backgroundColor: "#6b8e23" }}>
+            <Button color="white" onPress={() => this.TimePicker.open()}>
               set pickup time
             </Button>
           </View>
@@ -127,29 +123,45 @@ class bookingscreen extends Component {
         <Text>{this.props.navigation.getParam('lng')}</Text> */}
           <Button
             mode="contained"
-            color="#fa7916"
+            color="#6b8e23"
             onPress={() => {
               this.checkout();
             }}
           >
-            book
+            BOOK
           </Button>
         </View>
-      </ImageBackground>
+     </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+
   container: {
-    flex: 1,
-    alignItems: "center",
-    backgroundColor: "#aff589",
-    paddingTop: 100,
+        flex: 1,
+        backgroundColor: "#88b18b",
+        alignItems: 'center'
   },
+
+  image : {
+
+    marginTop: 30,
+    height: "35%",
+    width: "65%"
+},
+
+title: {
+  color: "white",
+  marginBottom: 10,
+  fontWeight:"500",
+  fontSize:40,
+  marginTop:10
+},
+
   tile: {
     alignItems: "center",
-    marginTop: 140,
+    marginTop: 10,
   },
   text: {
     fontSize: 20,

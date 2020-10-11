@@ -5,10 +5,12 @@ import {
   Text,
   FlatList,
   Alert,
-  Picker,
-  ImageBackground,
   Image,
+  Picker,
+  
 } from "react-native";
+
+import { Heading } from "../components/Heading";
 import { Button, shadow } from "react-native-paper";
 import axios from "../axioslist";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
@@ -92,72 +94,39 @@ const listScreen = (props) => {
   };
 
   return (
-    <ImageBackground
-      style={{ flex: 1 }}
-      source={{
-        uri:
-          "https://images.unsplash.com/photo-1519817914152-22d216bb9170?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1402&q=80",
-      }}
-    >
-      <View>
+    
+      <View style={styles.main}>
+        <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
         {/* <Button onPress={locationHandler}>set my location</Button> */}
-        <View style={{ alignItems: "center", marginBottom: 10, marginTop: 10 }}>
+        <View>
+        <View style={styles.row1}>
+          
           <TouchableOpacity onPress={locationHandler}>
-            <View
-              style={{
-                height: 150,
-                width: 150,
-                textAlign: "center",
-                backgroundColor: "rgba(255,255,255, 0.5)",
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: 6,
-              }}
-            >
-              <Image
-                style={{ height: 100, width: 100 }}
-                source={require("../assets/marginalia-location-access.png")}
-              ></Image>
-              <Text style={{ textAlign: "center" }}>Set Location</Text>
+          <View style={styles.container1}>
+              <Image style={styles.imgstyle } source={require("../assets/marginalia-location-access.png")}></Image>
+              <Text style={styles.txtstyle}>Set Location</Text>
+            </View>
+          </TouchableOpacity>
+        
+          <TouchableOpacity onPress={driversHandler}>
+            <View style={styles.container2}>
+              <Image style={styles.imgstyle} source={require("../assets/cherry-delivery.png")}></Image>
+              <Text style={styles.txtstyle}> view drivers in my area </Text>
             </View>
           </TouchableOpacity>
         </View>
 
-        <View style={{ alignItems: "center", marginBottom: 10 }}>
-          <TouchableOpacity onPress={driversHandler}>
-            <View
-              style={{
-                height: 180,
-                width: 180,
-                textAlign: "center",
-                backgroundColor: "rgba(255,255,255, 0.5)",
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: 6,
-              }}
-            >
-              <Image
-                style={{ height: 130, width: 130 }}
-                source={require("../assets/cherry-delivery.png")}
-              ></Image>
-              <Text style={{ textAlign: "center" }}>
-                view drivers in my area
-              </Text>
-            </View>
-          </TouchableOpacity>
-        </View>
         {/* <Button onPress={driversHandler}>view drivers in my area</Button> */}
 
-        <View style={{ alignItems: "center" }}>
-          <Picker
-            selectedValue={ecocentre}
-            style={{ height: 50, width: 150, color: "white" }}
-            onValueChange={(itemValue, itemIndex) => setecocentre(itemValue)}
-          >
+        <View style={styles.pickcon}>
+        <Text style={styles.topic}> Select Eco centre</Text>
+          <Picker selectedValue={ecocentre} style={{ height: 10,width: 200 }}
+            onValueChange={(itemValue, itemIndex) => setecocentre(itemValue)}>
             <Picker.Item label="Dambulla" value="Dambulla" />
             <Picker.Item label="Thambuththegama" value="Thambuththegama" />
           </Picker>
         </View>
+
         <ScrollView style={{ marginBottom: 20 }}>
           <FlatList
             style={{ marginBottom: 20 }}
@@ -202,11 +171,77 @@ const listScreen = (props) => {
           />
         </ScrollView>
       </View>
-    </ImageBackground>
+      </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
+
+  main:{
+      flex:1,
+      backgroundColor:"#88b18b"
+  },
+
+  title:{
+    color: "white",
+    fontWeight:"500",
+    fontSize:40,
+    marginTop:10,
+    marginLeft: 30
+  },
+
+  row1:{
+    flexDirection: "row",
+    marginTop: 30,
+    marginLeft: 30
+  },
+
+  topic:{
+    marginTop: 30,
+    fontSize:30,
+    color:"#ffffff"
+  },
+
+  container1:{
+    height: 180,
+    width: 150,
+    textAlign: "center",
+    backgroundColor: "rgba(255,255,255, 0.5)",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 6,
+    
+
+  },
+
+  container2:{
+    height: 180,
+    width: 150,
+    marginLeft: 50,
+    textAlign: "center",
+    backgroundColor: "rgba(255,255,255, 0.5)",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 6,
+
+  },
+
+  pickcon:{
+    alignItems: "center"
+  },
+
+ 
+  imgstyle:{
+    height: 100,
+    width : 100
+
+  },
+
+  txtstyle:{
+    textAlign: "center" 
+  },
+
   tile: {
     backgroundColor: "rgba(255,255,255,10)",
     height: 160,

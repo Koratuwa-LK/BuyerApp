@@ -55,6 +55,9 @@ class BookinghistoryScreen extends Component {
 const styles = StyleSheet.create({
   tile: {
     padding: 20,
+    backgroundColor:"#88b18b",
+    borderRadius: 10,
+    borderWidth:2
   },
 });
 export default BookinghistoryScreen;
