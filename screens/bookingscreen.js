@@ -31,16 +31,7 @@ class bookingscreen extends Component {
     });
   }
 
-  /* checkout() {
-      // axios.patch('/drivers/' + this.props.navigation.getParam('name') + '/.json' , {time: this.state.time, booking: {lat : this.props.navigation.getParam('lat'), lng: this.props.navigation.getParam('lng')}})
-      axios.patch('/drivers/' + this.props.navigation.getParam('name') + '/.json', {booking: {time: this.state.time, lat: this.props.navigation.getParam('lat'), lng: this.props.navigation.getParam('lng')}})
-      .then(response => {
-        console.log(response)
-      }).catch(err => {
-        console.log(err)
-      })
-    } */
-
+ 
   checkout() {
     // axios.patch('/drivers/' + this.props.navigation.getParam('name') + '/.json' , {time: this.state.time, booking: {lat : this.props.navigation.getParam('lat'), lng: this.props.navigation.getParam('lng')}})
     axios
@@ -73,6 +64,9 @@ class bookingscreen extends Component {
 
   render() {
     return (
+      // <View style={styles.container}>
+      //   <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
+      //        <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
       <View style={styles.container}>
         <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
              <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
@@ -121,6 +115,15 @@ class bookingscreen extends Component {
           />
           {/*  <Text>{this.props.navigation.getParam('lat')}</Text>
         <Text>{this.props.navigation.getParam('lng')}</Text> */}
+          {/* <Button
+            mode="contained"
+            color="#6b8e23"
+            onPress={() => {
+              this.checkout();
+            }}
+          >
+            BOOK
+          </Button> */}
           <Button
             mode="contained"
             color="#6b8e23"
@@ -130,6 +133,7 @@ class bookingscreen extends Component {
           >
             BOOK
           </Button>
+
         </View>
      </View>
     );
@@ -138,17 +142,30 @@ class bookingscreen extends Component {
 
 const styles = StyleSheet.create({
 
-  container: {
-        flex: 1,
-        backgroundColor: "#88b18b",
-        alignItems: 'center'
-  },
+//   container: {
+//         flex: 1,
+//         backgroundColor: "#88b18b",
+//         alignItems: 'center'
+//   },
 
-  image : {
+//   image : {
 
-    marginTop: 30,
-    height: "35%",
-    width: "65%"
+//     marginTop: 30,
+//     height: "35%",
+//     width: "65%"
+// },
+
+container: {
+  flex: 1,
+  backgroundColor: "#88b18b",
+  alignItems: 'center'
+},
+
+image : {
+
+marginTop: 30,
+height: "35%",
+width: "65%"
 },
 
 title: {
