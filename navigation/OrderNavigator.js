@@ -16,7 +16,6 @@ import BookinghistoryScreen from "../screens/bookinghistoryscreen";
 import OrderHistoryScreen from "../screens/OrderHistoryScreen";
 import ReviewScreen from "../screens/ReviewScreen";
 import SubscribeHome from "../screens/SubscribeHome";
-import NotificationHome from "../screens/NotificationScreen";
 import NotificationScreen from "../screens/NotificationScreen";
 
 const OrderNavigator = createStackNavigator({
