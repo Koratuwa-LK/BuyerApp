@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
-  TextInput,
   FlatList,
-  Image,
   ActivityIndicator,
-  Button,
-  TouchableOpacity,
   Alert,
 } from "react-native";
 import { YellowBox } from "react-native";
@@ -69,9 +64,12 @@ class ReviewScreen extends Component {
   };
 
   componentDidMount() {
-    this.setState({});
     const reviews = db.ref("Farmers/" + this.state.FarmerID + "/reviews");
     reviews.on("value", (datasnap) => {
+      if (!datasnap.exists()) {
+        Alert.alert("There are no reviews yet");
+        this.props.navigation.navigate("Market");
+      }
       const dataSource = [];
       datasnap.forEach((doc) => {
         dataSource.push({
@@ -123,6 +121,9 @@ const styles = StyleSheet.create({
     marginLeft: "5%",
     height: 150,
     width: "90%",
+    borderRadius: 5,
+    borderColor: "green",
+    borderWidth: 2,
     shadowColor: "#000",
     shadowOpacity: 1,
     shadowOffset: {

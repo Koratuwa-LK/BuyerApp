@@ -83,35 +83,43 @@ class FarmerScreen extends Component {
 
   renderItem = ({ item }) => {
     return (
-      <ScrollView>
-        <View style={styles.card}>
-          <View style={{ marginLeft: 10 }}>
-            <View style={{ flexDirection: "row" }}>
-              <View style={{ flexDirection: "column" }}>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={styles.title}>{item.Farmer}</Text>
-                  <Text style={styles.rating}>{item.Rating}/5</Text>
-                </View>
-                <Text style={styles.title}>phone</Text>
-                <Text style={styles.title}>eco</Text>
-                <Text style={styles.title}>crops</Text>
+      <View style={styles.card}>
+        <View style={{ marginLeft: 10 }}>
+          <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "column" }}>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.title}>{item.Farmer}</Text>
+                <Text style={styles.rating}>{item.Rating}/5</Text>
+              </View>
+              <View style={{ marginTop: 20 }}></View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.text} selectable>
+                  Mobile:{" "}
+                </Text>
+                <Text style={styles.text}>{item.Mobile}</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.text}>Economic Center: </Text>
+                <Text style={styles.text}>{item.Eco}</Text>
               </View>
             </View>
           </View>
-          <FilledButton
-            title={"Rate Farmer"}
-            style={styles.orderButton}
-            onPress={() => this.openModal(item.uid)}
-          />
-          <Modal
-            animationIn="bounceIn"
-            animationOut="bounceOut"
-            backdropColor="#696969"
-            isVisible={this.state.isModalVisible}
-            onBackButtonPress={() => this.setState({ isModalVisible: false })}
-            onBackdropPress={() => this.setState({ isModalVisible: false })}
-            style={{ margin: 0 }}
-          >
+        </View>
+        <FilledButton
+          title={"Rate Farmer"}
+          style={styles.orderButton}
+          onPress={() => this.openModal(item.uid)}
+        />
+        <Modal
+          animationIn="bounceIn"
+          animationOut="bounceOut"
+          backdropColor="#696969"
+          isVisible={this.state.isModalVisible}
+          onBackButtonPress={() => this.setState({ isModalVisible: false })}
+          onBackdropPress={() => this.setState({ isModalVisible: false })}
+          style={{ margin: 0 }}
+        >
+          <ScrollView>
             <View style={styles.container}>
               <View style={styles.box}>
                 <Stars
@@ -152,13 +160,19 @@ class FarmerScreen extends Component {
                 <FilledButton
                   title={"Submit"}
                   style={styles.orderButton}
-                  onPress={() => this.submit(this.state.FarmerID)}
+                  onPress={() => {
+                    if (this.state.name == "" || this.state.Review == "") {
+                      Alert.alert("Please Enter all the details");
+                    } else {
+                      this.submit(this.state.FarmerID);
+                    }
+                  }}
                 />
               </View>
             </View>
-          </Modal>
-        </View>
-      </ScrollView>
+          </ScrollView>
+        </Modal>
+      </View>
     );
   };
 
@@ -186,6 +200,8 @@ class FarmerScreen extends Component {
         dataSource.push({
           key: doc.key,
           Farmer: doc.toJSON().name,
+          Mobile: doc.toJSON().mobile,
+          Eco: doc.toJSON().economiccenter,
           uid: doc.toJSON().uid,
           Rating: this.roundedAvg,
         });
@@ -260,6 +276,9 @@ const styles = StyleSheet.create({
     height: 200,
     width: "90%",
     shadowColor: "#000",
+    borderRadius: 5,
+    borderColor: "green",
+    borderWidth: 2,
     shadowOpacity: 1,
     shadowOffset: {
       width: 3,
