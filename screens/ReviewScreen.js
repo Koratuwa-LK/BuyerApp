@@ -1,23 +1,19 @@
 import React, { Component } from "react";
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
-  TextInput,
   FlatList,
-  Image,
   ActivityIndicator,
-  Button,
-  TouchableOpacity,
   Alert,
 } from "react-native";
 import { YellowBox } from "react-native";
 import _ from "lodash";
 import { FilledButton } from "../components/FilledButton";
-import Icon from "react-native-vector-icons/Ionicons";
 import { withNavigation } from "react-navigation";
 import { db } from "../database/db.js";
+import Stars from "react-native-stars";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import firebase from "firebase";
 
 class ReviewScreen extends Component {
@@ -41,7 +37,22 @@ class ReviewScreen extends Component {
               <Text style={styles.title}>{item.name}</Text>
             </View>
             <View style={{ flexDirection: "row" }}>
-              <Text style={styles.text}>{item.rating}</Text>
+              <View style={{ marginLeft: -7 }}>
+                <Stars
+                  display={item.rating}
+                  count={5}
+                  spacing={8}
+                  half={false}
+                  starSize={50}
+                  fullStar={<Icon name={"star"} style={[styles.myStarStyle]} />}
+                  emptyStar={
+                    <Icon
+                      name={"star-outline"}
+                      style={[styles.myStarStyle, styles.myEmptyStarStyle]}
+                    />
+                  }
+                />
+              </View>
             </View>
             <View style={{ flexDirection: "row" }}>
               <Text style={styles.text}>{item.review}</Text>
@@ -55,6 +66,10 @@ class ReviewScreen extends Component {
   componentDidMount() {
     const reviews = db.ref("Farmers/" + this.state.FarmerID + "/reviews");
     reviews.on("value", (datasnap) => {
+      if (!datasnap.exists()) {
+        Alert.alert("There are no reviews yet");
+        this.props.navigation.navigate("Market");
+      }
       const dataSource = [];
       datasnap.forEach((doc) => {
         dataSource.push({
@@ -106,6 +121,9 @@ const styles = StyleSheet.create({
     marginLeft: "5%",
     height: 150,
     width: "90%",
+    borderRadius: 5,
+    borderColor: "green",
+    borderWidth: 2,
     shadowColor: "#000",
     shadowOpacity: 1,
     shadowOffset: {
@@ -151,6 +169,18 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginRight: 4,
     alignSelf: "center",
+  },
+  myStarStyle: {
+    fontSize: 20,
+    marginTop: 15,
+    color: "yellow",
+    backgroundColor: "transparent",
+    textShadowColor: "black",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  myEmptyStarStyle: {
+    color: "white",
   },
 });
 

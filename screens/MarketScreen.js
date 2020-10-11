@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -8,9 +7,7 @@ import {
   FlatList,
   Image,
   ActivityIndicator,
-  Button,
 } from "react-native";
-import { YellowBox } from "react-native";
 import _ from "lodash";
 import { FilledButton } from "../components/FilledButton";
 import Icon from "react-native-vector-icons/Ionicons";

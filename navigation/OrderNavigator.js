@@ -17,6 +17,8 @@ import OrderHistoryScreen from "../screens/OrderHistoryScreen";
 import ReviewScreen from "../screens/ReviewScreen";
 import SubscribeHome from "../screens/SubscribeHome";
 import NotificationScreen from "../screens/NotificationScreen";
+import FarmerScreen from "../screens/FarmerScreen";
+
 
 const OrderNavigator = createStackNavigator({
   Loading: LoadingScreen,
@@ -25,6 +27,7 @@ const OrderNavigator = createStackNavigator({
   Home: HomeScreen,
   Market: MarketScreen,
   Order: OrderScreen,
+  Farmer: FarmerScreen,
   Reviews: ReviewScreen,
   Transport: TransportScreen,
   OrderHistory: OrderHistoryScreen,
