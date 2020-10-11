@@ -17,6 +17,7 @@ import { YellowBox } from "react-native";
 //import { TextInput } from "react-native-gesture-handler";
 
 class SignUpScreen extends Component {
+  static navigationOptions = { header: null };
   constructor(props) {
     super(props);
     console.disableYellowBox = true;

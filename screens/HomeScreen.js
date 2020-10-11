@@ -3,19 +3,17 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
-  Alert,
   TouchableOpacity,
   ImageBackground,
+  Image,
 } from "react-native";
-import { Heading } from "../components/Heading";
 import { FilledButton } from "../components/FilledButton";
 import { withNavigation } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
 import firebase from "firebase";
-import { YellowBox } from "react-native";
 
 class HomeScreen extends Component {
+  static navigationOptions = { headerLeft: null };
   constructor(props) {
     super(props);
     console.disableYellowBox = true;
@@ -31,6 +29,10 @@ class HomeScreen extends Component {
         }}
       >
         <View style={styles.container}>
+          <Image
+            style={styles.Logo}
+            source={require("../assets/farmer2.png")}
+          ></Image>
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
@@ -67,7 +69,7 @@ class HomeScreen extends Component {
             <TouchableOpacity
               style={styles.card}
               onPress={() => {
-                this.props.navigation.navigate("OrderHistory");
+                this.props.navigation.navigate("Farmer");
               }}
             >
               <Text style={styles.text}>Farmers</Text>
@@ -131,15 +133,17 @@ const styles = StyleSheet.create({
     },
     elevation: 10,
   },
+  Logo: {
+    marginTop: -150,
+    marginBottom: 0,
+    height: 200,
+    width: 200,
+  },
   text: {
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 18,
     color: "green",
-  },
-  title: {
-    color: "green",
-    marginBottom: 48,
   },
   icon: {
     marginTop: 10,
