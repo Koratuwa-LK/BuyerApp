@@ -87,7 +87,7 @@ class HomeScreen extends Component {
             <TouchableOpacity
               style={styles.card}
               onPress={() => {
-                this.props.navigation.navigate("Notifications");
+                this.props.navigation.navigate("NotificationScreen");
               }}
             >
               <Text style={styles.text}>Notifications</Text>
