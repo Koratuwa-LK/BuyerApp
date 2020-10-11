@@ -15,8 +15,8 @@ export default function NotificationScreen() {
 
     const BuyerId = firebase.auth().currentUser.uid;
 
-  
-   let subscriptionlist;
+
+    let subscriptionlist;
     let tempsubscriptionList = [];
     let stockslist;
     let tempstockList = [];
@@ -27,28 +27,31 @@ export default function NotificationScreen() {
       for (let key in subscriptionlist) {
         tempsubscriptionList.push(subscriptionlist[key])
       }
-    })
-
-    const stocks = db.ref("Stocks");
-    stocks.on('value', snapshot => {
-      const stockslist = snapshot.val();
-      for (let key in stockslist) {
-        tempstockList.push(stockslist[key])
-      }
-    })
-
-    const tempNotificationList = []
-
-    tempsubscriptionList.map(sub => {
-      tempstockList.map(stock => {
-        if (sub['maxPrice'] > stock['price'] && sub['minPrice'] < stock['price'] && sub['crop'] == stock['crop'] && sub['quantity'] <= stock['quantity']) {
-          tempNotificationList.push(stock)
-          console.log(tempNotificationList)
+      const stocks = db.ref("Stocks");
+      stocks.on('value', snapshot => {
+        const stockslist = snapshot.val();
+        for (let key in stockslist) {
+          tempstockList.push(stockslist[key])
         }
+        const tempNotificationList = []
+
+        tempsubscriptionList.map(sub => {
+          tempstockList.map(stock => {
+            if (sub['maxPrice'] > stock['price'] && sub['minPrice'] < stock['price'] && sub['crop'] == stock['crop'] && sub['quantity'] <= stock['quantity']) {
+              tempNotificationList.push(stock)
+              console.log(tempNotificationList)
+            }
+          })
+        })
+        setNotification({ notificationList: tempNotificationList })
       })
+
     })
 
-    setNotification({ notificationList: tempNotificationList })
+
+
+
+
 
   }, [])
 
