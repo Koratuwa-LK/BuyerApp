@@ -8,6 +8,7 @@ import UserNavigator from "./navigation/UserNavigator";
 
 export default function App() {
   return <OrderNavigator />;
+  //VScode 
 }
 
 const styles = StyleSheet.create({
