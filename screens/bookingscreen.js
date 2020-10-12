@@ -68,7 +68,7 @@ class bookingscreen extends Component {
       //   <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
       //        <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
       <View style={styles.container}>
-        <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
+        {/* <Image style={styles.image} source={require('../assets/logo1.png')}></Image> */}
              <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
         <View style={styles.tile}>
           <View

@@ -31,7 +31,7 @@ import { Heading } from "../components/Heading";
         //      <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
 
         <View style={styles.main}>
-        <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
+        {/* <Image style={styles.image} source={require('../assets/logo1.png')}></Image> */}
         <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
 
 

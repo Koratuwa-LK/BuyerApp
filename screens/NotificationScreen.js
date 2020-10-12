@@ -37,9 +37,8 @@ export default function NotificationScreen() {
 
         tempsubscriptionList.map(sub => {
           tempstockList.map(stock => {
-            if (sub['maxPrice'] > stock['price'] && sub['minPrice'] < stock['price'] && sub['crop'] == stock['crop'] && sub['quantity'] <= stock['quantity']) {
+            if ((sub['crop']) == stock['crop'] && (parseInt(sub['maxPrice']) > parseInt(stock['price'])) && (parseInt(sub['minPrice']) < parseInt(stock['price'])) && ( parseInt(sub['quantity']) <= parseInt(stock['quantity']))) {
               tempNotificationList.push(stock)
-              console.log(tempNotificationList)
             }
           })
         })
@@ -47,10 +46,6 @@ export default function NotificationScreen() {
       })
 
     })
-
-
-
-
 
 
   }, [])

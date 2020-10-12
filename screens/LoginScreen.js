@@ -67,7 +67,7 @@ class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
+        {/* <Image style={styles.image} source={require('../assets/logo1.png')}></Image> */}
         <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
         {this.state.errorMessage && (
           <Text style={{ color: "red", marginBottom: 15 }}>
