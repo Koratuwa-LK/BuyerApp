@@ -112,34 +112,35 @@ class LoginScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 120,
+    paddingTop: 50,
     padding: 20,
     alignItems: "center",
-    backgroundColor: "#88b18b"
+    backgroundColor: "#88b18b",
   },
 
   image :{
     alignItems: "center",
-    width: '50%',
-    height: '25%'
+    width: '58%',
+    height: '30%'
   },
 
   title: {
-    color: "white",
+    marginTop: -30,
+    color: "green",
     marginBottom: 80,
     fontWeight:"500"
   },
 
   input: {
+    marginVertical: 8,
     backgroundColor: "#ccc",
     width: 300,
     padding: 10,
     borderRadius: 8,
-    marginVertical: 8,
   },
   loginButton: {
+    backgroundColor: "#6b8e23",
     marginVertical: 32,
-    backgroundColor: "#6b8e23"
   },
 });
 
