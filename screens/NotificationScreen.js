@@ -64,7 +64,7 @@ export default function NotificationScreen() {
             return (
               <Card style={styles.card} key={val.timestamp}>
                 <Card.Content>
-                  <Title>{val.crop}</Title>
+                  <Title style={{color: 'green'}}>{val.crop}</Title>
                   <Paragraph>Farmer Name : {val.name}</Paragraph>
                   <Paragraph>Eco Center : {val.economicCenter}</Paragraph>
                   <Paragraph>Farmer Contact No : {val.phoneNum}</Paragraph>
@@ -89,6 +89,12 @@ const styles = StyleSheet.create({
 
   },
   card: {
+      flex: 1,
+      flexDirection: "row",
+      borderRadius: 5,
+      borderColor: "green",
+      borderWidth: 2,
+      marginBottom: 1,
     marginHorizontal: 10,
     marginVertical: 4
   }
