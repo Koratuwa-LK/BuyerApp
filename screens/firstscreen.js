@@ -82,7 +82,9 @@ render()
         // </View>
 
           <View style={styles.container}>
-     {/*    <Image style={styles.image} source={require('../assets/logo.jpg')}></Image> */}
+
+        <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
+
 
             <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
             <Text style={styles.texty}>Please click Login if you are already registered Or Click Sign up to create a new account.</Text>

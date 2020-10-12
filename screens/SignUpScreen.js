@@ -20,6 +20,7 @@ import { YellowBox } from "react-native";
 // 
 
 class SignUpScreen extends Component {
+  static navigationOptions = { header: null };
   constructor(props) {
     super(props);
     console.disableYellowBox = true;
@@ -113,8 +114,8 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    marginTop: 50,
-    color: "white",
+    marginTop: -30,
+    color: "green",
     marginBottom: 80,
     fontWeight:"500"
   },

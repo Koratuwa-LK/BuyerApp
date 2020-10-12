@@ -7,6 +7,7 @@ import {
   Alert,
   Image,
   Picker,
+  ImageBackground,
   
 } from "react-native";
 
@@ -100,21 +101,44 @@ const listScreen = (props) => {
       //   {/* <Button onPress={locationHandler}>set my location</Button> */}
       //   <View>
       //   <View style={styles.row1}>
-      <View style={styles.main}>
-        <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
+      <ImageBackground
+      style={{ flex: 1 }}
+      source={{
+        uri:
+          "https://images.unsplash.com/photo-1519817914152-22d216bb9170?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1402&q=80",
+      }}
+    >
+      <View>
         {/* <Button onPress={locationHandler}>set my location</Button> */}
-        <View>
-        <View style={styles.row1}>
+        <View style={{alignItems: "center", marginBottom: 10, marginTop: 10}}>
           
           <TouchableOpacity onPress={locationHandler}>
-          <View style={styles.container1}>
-              <Image style={styles.imgstyle } source={require("../assets/marginalia-location-access.png")}></Image>
+          <View style={{
+                height: 100,
+                width: 100,
+                textAlign: "center",
+                backgroundColor: "rgba(255,255,255, 0.5)",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 6,
+              }}>
+              <Image style={{ height: 80, width: 80 } } source={require("../assets/marginalia-location-access.png")}></Image>
               <Text style={styles.txtstyle}>Set Location</Text>
             </View>
           </TouchableOpacity>
+          </View>
         
+        <View  style={{ alignItems: "center", marginBottom: 10 }}>
           <TouchableOpacity onPress={driversHandler}>
-            <View style={styles.container2}>
+            <View style={{
+                height: 150,
+                width: 150,
+                textAlign: "center",
+                backgroundColor: "rgba(255,255,255, 0.5)",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 6,
+              }}>
               <Image style={styles.imgstyle} source={require("../assets/cherry-delivery.png")}></Image>
               <Text style={styles.txtstyle}> view drivers in my area </Text>
             </View>
@@ -125,7 +149,7 @@ const listScreen = (props) => {
 
         <View style={styles.pickcon}>
         <Text style={styles.topic}> Select Eco centre</Text>
-          <Picker selectedValue={ecocentre} style={{ height: 10,width: 200 }}
+          <Picker selectedValue={ecocentre} style={{ height: 30,width: 200 , color: "white", alignSelf: 'center'}}
             onValueChange={(itemValue, itemIndex) => setecocentre(itemValue)}>
             <Picker.Item label="Dambulla" value="Dambulla" />
             <Picker.Item label="Thambuththegama" value="Thambuththegama" />
@@ -176,7 +200,7 @@ const listScreen = (props) => {
           />
         </ScrollView>
       </View>
-      </View>
+      </ImageBackground>
     
   );
 };
@@ -269,7 +293,7 @@ row1:{
 topic:{
   marginTop: 30,
   fontSize:30,
-  color:"#ffffff"
+  color:"yellow"
 },
 
 container1:{

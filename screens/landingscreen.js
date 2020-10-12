@@ -29,11 +29,8 @@ import { Heading } from "../components/Heading";
         // <View style={styles.main}>
         //      <Image style={styles.image} source={require('../assets/logo1.png')}></Image>
         //      <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
-
+<ImageBackground style={{flex: 1}} source={{uri: 'https://images.unsplash.com/photo-1528505086635-4c69d5f10908?ixlib=rb-1.2.1&auto=format&fit=crop&w=1389&q=80://images.unsplash.com/photo-1515113216643-09b1888ee9d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80://images.unsplash.com/photo-1503762687835-129cc7a277e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1576&q=80'}}>
         <View style={styles.main}>
-        {/* <Image style={styles.image} source={require('../assets/logo1.png')}></Image> */}
-        <Heading style={styles.title}>KrushiGanudenu.LK</Heading>
-
 
         <View style={styles.row1}>
             <View style={styles.btn}>
@@ -43,12 +40,10 @@ import { Heading } from "../components/Heading";
                 <Image style={styles.imgstyle} source={require('../assets/eastwood-delivery.png')}></Image>
                 <Text style={styles.txtstyle}>BOOK DELIVERY</Text>
                 </View>
-
-       
             </TouchableOpacity>
             </View>
 
-            <View style={styles.btn1}>
+            <View style={styles.btn}>
             {/* <Button mode="contained" onPress={() => {props.navigation.navigate('List')}}>book delivery</Button> */}
             <TouchableOpacity onPress={() => {this.props.navigation.navigate('History')}}>
                 <View style={styles.style1}>
@@ -59,7 +54,7 @@ import { Heading } from "../components/Heading";
             </View>
         </View>
         </View>
-        
+        </ImageBackground>
     
     )}
     }
@@ -111,8 +106,6 @@ const styles = StyleSheet.create({
     // },
 
     main:{
-        flex: 1,
-        backgroundColor: "#88b18b",
         alignItems: 'center'
     },
 
@@ -125,14 +118,9 @@ const styles = StyleSheet.create({
       },
 
     row1 :{
-        flexDirection: "row"
-    },
-
-    image : {
-
-            marginTop: 100,
-            height: "40%",
-            width: "85%"
+        marginTop: 200,
+        flexDirection: "column",
+        alignItems: 'center'
     },
     
     style1: {
@@ -159,10 +147,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         width: 200
     },
-    btn1: {
-        marginTop: 10,
-        width: 200
-    }
    
 })
 
