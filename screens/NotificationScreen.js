@@ -55,7 +55,7 @@ export default function NotificationScreen() {
       <View style={styles.container}>
 
         {
-          notification.notificationList.map(val => {
+          notification.notificationList.slice(0).reverse().map(val => {
             return (
               <Card style={styles.card} key={val.timestamp}>
                 <Card.Content>
@@ -67,7 +67,7 @@ export default function NotificationScreen() {
                   <Paragraph>Quantity : {val.quantity}</Paragraph>
                 </Card.Content>
                 <Card.Actions style={{ alignSelf: "flex-end" }}>
-                  <Button onPress={() => console.log("Sahan")}>Ignore</Button>
+                  {/* <Button onPress={() => console.log()}>Ignore</Button> */}
                 </Card.Actions>
               </Card>
             )
