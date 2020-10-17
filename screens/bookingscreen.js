@@ -7,7 +7,8 @@ import {
   StyleSheet,
   Image,
   Alert,
-  ImageBackground
+  ImageBackground,
+  ScrollView
 } from "react-native";
 import { Button } from "react-native-paper";
 import TimePicker from "react-native-24h-timepicker";
@@ -17,6 +18,9 @@ import { FilledButton } from "../components/FilledButton";
 
 class bookingscreen extends Component {
   state = {
+    buyername: "",
+    croptype: "",
+    cropquantity: "",
     time: "0:00",
     name: "tony",
     link: {
@@ -37,7 +41,9 @@ class bookingscreen extends Component {
     // axios.patch('/drivers/' + this.props.navigation.getParam('name') + '/.json' , {time: this.state.time, booking: {lat : this.props.navigation.getParam('lat'), lng: this.props.navigation.getParam('lng')}})
     axios
       .post("/farmerbookings.json", {
-        farmername: "farmer_1",
+        farmername: this.state.buyername,
+        crop : this.state.croptype,
+        quantity: this.state.cropquantity,
         drivername: this.props.navigation.getParam("name"),
         farmernumer: "011698080",
         time: this.state.time,
@@ -78,6 +84,7 @@ class bookingscreen extends Component {
       >
 
         <View style={styles.tile}>
+          <ScrollView>
           <View
             style={{
               flexDirection: "row",
@@ -107,10 +114,22 @@ class bookingscreen extends Component {
             </View>
           </View>
 
-          <View style={{ backgroundColor: "white" }}>
+          <View style={{ backgroundColor: "white"}}>
             <Button color="#fa7916" onPress={() => this.TimePicker.open()}>
               set pickup time
             </Button>
+          </View>
+          <View>
+            <TextInput style = {{marginTop: 20 ,width: 260, height: 40}}placeholder= "      Enter Your Name" placeholderTextColor="#fa7916" backgroundColor="white" value={this.state.buyername}
+                onChangeText={(text) => this.setState({ buyername: text })}></TextInput>
+          </View>
+          <View>
+            <TextInput style = {{marginTop: 20 ,width: 260, height: 40}}placeholder= "      Enter Crop Type" placeholderTextColor="#fa7916" backgroundColor="white" value={this.state.croptype}
+                onChangeText={(text) => this.setState({ croptype: text })}></TextInput>
+          </View>
+          <View>
+            <TextInput style = {{marginTop: 20 ,width: 260, height: 40}}placeholder= "      Enter Crop Quantity(Kg)" placeholderTextColor="#fa7916" backgroundColor="white" value={this.state.cropquantity}
+                onChangeText={(text) => this.setState({ cropquantity: text })}></TextInput>
           </View>
           <Text style={styles.text}>{this.state.time}</Text>
           <TimePicker
@@ -132,6 +151,7 @@ class bookingscreen extends Component {
             BOOK
           </Button> */}
           <Button
+          style={{marginTop: 30, width: 100, alignSelf: 'center'}}
             mode="contained"
             color="#fa7916"
             onPress={() => {
@@ -140,6 +160,7 @@ class bookingscreen extends Component {
           >
             BOOK
           </Button>
+          </ScrollView>
      </View>
      </ImageBackground>
     );
@@ -176,11 +197,13 @@ width: "65%"
 
   tile: {
     alignItems: "center",
-    marginTop: 140,
+    marginTop: 50,
   },
   text: {
+    alignItems: 'center',
+    alignSelf: 'center',
     fontSize: 20,
-    marginTop: 8,
+    marginTop: 20,
     color: "#f7e91e",
     fontWeight: "bold",
   },

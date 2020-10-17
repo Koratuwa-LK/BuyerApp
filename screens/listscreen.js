@@ -72,12 +72,16 @@ const listScreen = (props) => {
         const hotel = [];
         const obj = response.data;
         for (let key in obj) {
+          console.log(key)
           if (obj[key].status == "Online" && obj[key].ecocentre == ecocentre) {
             hotel.push({
               id: key,
               location: obj[key].location,
               status: obj[key].status,
               name: obj[key].name,
+              size: obj[key].maxsize,
+              plateno: obj[key].plateno,
+              type: obj[key].type
             });
           }
         }
@@ -131,8 +135,8 @@ const listScreen = (props) => {
         <View  style={{ alignItems: "center", marginBottom: 10 }}>
           <TouchableOpacity onPress={driversHandler}>
             <View style={{
-                height: 150,
-                width: 150,
+                height: 130,
+                width: 130,
                 textAlign: "center",
                 backgroundColor: "rgba(255,255,255, 0.5)",
                 alignItems: "center",
@@ -149,11 +153,15 @@ const listScreen = (props) => {
 
         <View style={styles.pickcon}>
         <Text style={styles.topic}> Select Eco centre</Text>
-          <Picker selectedValue={ecocentre} style={{ height: 30,width: 200 , color: "white", alignSelf: 'center'}}
+        <Text style={{backgroundColor: 'white', marginTop: 20, height: 50, borderRadius: 8}}>
+          <Picker selectedValue={ecocentre} style={{ height: 50,width: 200 , color: "black", alignSelf: 'center'}}
             onValueChange={(itemValue, itemIndex) => setecocentre(itemValue)}>
             <Picker.Item label="Dambulla" value="Dambulla" />
             <Picker.Item label="Thambuththegama" value="Thambuththegama" />
+            <Picker.Item label="Meegoda" value="Meegoda" />
+            <Picker.Item label="Nuwara Eliya" value="Nuwara Eliya" />
           </Picker>
+          </Text>
         </View>
 
         <ScrollView style={{ marginBottom: 20 }}>
@@ -182,6 +190,8 @@ const listScreen = (props) => {
                         style={styles.img}
                       ></Image>
                     </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
                     <Text
                       style={{ marginLeft: 10, fontSize: 15, marginTop: 8 }}
                     >
@@ -192,6 +202,39 @@ const listScreen = (props) => {
                     >
                       {item.status}
                     </Text>
+                    <View style={{width: 200}}></View>
+                    </View>
+                    <View>
+                    <View style={{flexDirection: 'row'}}>
+                    <Text style={styles.disc}>
+                      Vehicle Type:  
+                    </Text>
+                    <Text style={styles.disc}>
+                      {item.type}
+                    </Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                    <Text style={styles.disc}>
+                      Max Size:  
+                    </Text>
+                    <Text style={styles.disc}>
+                      {item.size}
+                    </Text>
+                    <Text style={styles.disc}>
+                      Kg
+                    </Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                    <Text style={styles.disc}>
+                      No plate:  
+                    </Text>
+                    <Text style={styles.disc}>
+                      {item.plateno}
+                    </Text>
+                    </View>
+                    </View>
+                    
+                    </View>
                   </View>
                 </TouchableOpacity>
               );
@@ -290,8 +333,11 @@ row1:{
   marginLeft: 30
 },
 
+disc: {
+  fontSize: 15,
+},
 topic:{
-  marginTop: 30,
+  marginTop: 10,
   fontSize:30,
   color:"yellow"
 },
@@ -326,8 +372,8 @@ pickcon:{
 
 
 imgstyle:{
-  height: 100,
-  width : 100
+  height: 80,
+  width : 80
 
 },
 
