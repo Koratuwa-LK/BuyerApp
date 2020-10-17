@@ -28,19 +28,31 @@ class BookinghistoryScreen extends Component {
     return (
       <View>
         <ScrollView>
-          {this.state.trips.map((trip) => {
+          {this.state.trips.reverse().map((trip) => {
             return (
-              <View style={styles.tile}>
-                {trip.farmer_name == "farmer_1" ? (
+              <View style ={{marginTop: 20}}>
+                {trip.farmer_name == "Nipuna" ? (
+                  <View style={styles.tile}>
                   <View>
                     <View style={{ flexDirection: "row" }}>
-                      <Text style={{ fontWeight: "bold" }}>Confirmed time</Text>
+                      <Text style={{ fontWeight: "bold" }}>Confirmed time: </Text>
                       <Text>{trip.date}</Text>
                     </View>
-                    <Text>{trip.driver_name}</Text>
-                    <Text>{trip.farmer_name}</Text>
-                    <Text>{trip.status}</Text>
-                    <Text>{trip.time}</Text>
+                    <View style={{ flexDirection: "row" }}>
+                      <Text style={{ fontWeight: "bold" }}>Driver: </Text>
+                      <Text>{trip.driver_name}</Text>
+                    </View>
+                    <View style={{ flexDirection: "row" }}>
+                      <Text style={{ fontWeight: "bold" }}>Status: </Text>
+                      <Text>{trip.status}</Text>
+                    </View>
+                    <View style={{ flexDirection: "row" }}>
+                      <Text style={{ fontWeight: "bold" }}>Time: </Text>
+                      <Text>{trip.time}</Text>
+                    </View>
+                    
+                    
+                  </View>
                   </View>
                 ) : null}
               </View>
